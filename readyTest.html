@@ -5,18 +5,23 @@
     <script>
       $(window).on('load', function() {
         console.info('html - $ - window.load');
+        $(body).append($('<div />', { text: 'html - $ - window.load' }));
       });
       $(function() {
         console.info('html - $ - document.ready');
+        $(body).append($('<div />', { text: 'html - $ - document.ready' }));
       });
       function onLoadF() {
         console.info('html - onload');
+        $(body).append($('<div />', { text: 'html - onload' }));
       }
       console.info('html - head inline');
+      $(body).append($('<div />', { text: 'head inline' }));
     </script>
     <body onload="onLoadF()">
       <script>
         console.info('html - body inline');
+        $(body).append($('<div />', { text: 'html - body inline' }));
       </script>
     </body>
   </haed>
