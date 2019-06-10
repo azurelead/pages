@@ -1,0 +1,23 @@
+<!-- Tampermonkey含め初期表示時の読み込み順のテスト -->
+<html>
+  <haed>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(window).load(function() {
+        console.info('html - $ - window.load');
+      });
+      $(function() {
+        console.info('html - $ - document.ready');
+      });
+      onLoadF = function() {
+        console.info('html - onload');
+      };
+      console.info('html - head inline');
+    </script>
+    <body onload="onLoadF()">
+      <script>
+        console.info('html - body inline');
+      </script>
+    </body>
+  </haed>
+</html>
